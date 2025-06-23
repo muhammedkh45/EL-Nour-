@@ -1,0 +1,18 @@
+.navbar-logo {
+  height: 260px;
+  max-width: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+  .navbar-logo {
+    height: 28px;
+    max-width: 80px;
+  }
+}
