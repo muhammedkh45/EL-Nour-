@@ -12,7 +12,7 @@ const translations = {
     contact: 'Contact',
     company: 'EL-Nour Paints',
     aboutTitle: 'About Us',
-    aboutText1: 'El-Nour (El-Jundy Group) has a rich history in the painting industry, specializing in metallic paints, primers, and lacquer finishes. Our mission is to deliver exceptional quality and innovative solutions for every client, with a commitment to sustainability and customer satisfaction.',
+    aboutText1: 'El-Nour Paints has a solid history in the manufacturing of specialized coatings for metal structures, road marking paints, curb paints, flexographic printing inks, and all types of paint thinners, in addition to various ink solvents. We are committed to delivering the highest standards of quality and innovative solutions that meet the needs of every client, with a continuous focus on sustainability and customer satisfaction.',
     aboutText2: 'We value craftsmanship, integrity, and long-term relationships with our clients and partners.',
     servicesTitle: 'Our Services',
     metallic: 'Metallic Coating',
@@ -34,8 +34,8 @@ const translations = {
     linkedin: 'LinkedIn',
     getQuote: 'Get a Quote',
     viewServices: 'View Services',
-    heroTitle: 'Welcome to El-Nour',
-    heroDesc: 'Specialists in metallic paints, primer, and lacquer (lakai). Professional finishes for every surface.',
+    heroTitle: 'Welcome to EL-Nour',
+    heroDesc: 'Specialists in metallic paints, primers, and metallic lacquers. Professional finishes for every surface and every client.',
     copyright: 'All rights reserved.'
   },
   ar: {
@@ -47,7 +47,7 @@ const translations = {
     contact: 'اتصل بنا',
     company: 'النور للدهانات',
     aboutTitle: 'من نحن',
-    aboutText1: 'النور (مجموعة الجندي) لديها تاريخ عريق في صناعة الدهانات، متخصصة في الدهانات المعدنية والبرايمر واللكر. مهمتنا تقديم جودة استثنائية وحلول مبتكرة لكل عميل، مع الالتزام بالاستدامة ورضا العملاء.',
+    aboutText1: 'تتمتع شركة النور للدهانات بتاريخ راسخ في مجال تصنيع الدهانات المتخصصة للمنشآت المعدنية، ودهانات تخطيط الطرق، ودهانات البلدورات، وصناعة أحبار الطباعة، وجميع أنواع الثنر الخاصة بالبويات، بالإضافة إلى كافة مذيبات الأحبار. نلتزم بتقديم أعلى مستويات الجودة والحلول المبتكرة التي تلبي احتياجات كل عميل، مع الحرص الدائم على الاستدامة ورضا العملاء.',
     aboutText2: 'نحن نقدر الحرفية والنزاهة والعلاقات طويلة الأمد مع عملائنا وشركائنا.',
     servicesTitle: 'خدماتنا',
     metallic: 'الطلاء المعدني',
@@ -55,7 +55,7 @@ const translations = {
     primers: 'البرايمر',
     primersDesc: 'برايمر عالي الأداء لضمان الالتصاق والحماية.',
     lacquer: 'اللاكيهات',
-    lacquerDesc: 'تشطيبات لكر لامعة ومتينة لمظهر فاخر.',
+    lacquerDesc: 'تشطيبات لاكيهات لامعة ومتينة لمظهر فاخر.',
     productsTitle: 'منتجاتنا',
     primerA: 'برايمر نوع A',
     primerADesc: 'برايمر متعدد الاستخدامات للأسطح المعدنية لضمان حماية والتصاق طويل الأمد.',
@@ -70,7 +70,7 @@ const translations = {
     getQuote: 'احصل على عرض سعر',
     viewServices: 'عرض الخدمات',
     heroTitle: 'مرحبًا بكم في النور',
-    heroDesc: 'متخصصون في الدهانات المعدنية والبرايمر واللاكيهات. تشطيبات احترافية لكل سطح.',
+    heroDesc: ' متخصصون في الدهانات المعدنية والبرايمر واللاكيهات المعدنية. تشطيبات احترافية لكل سطح و كل عميل.',
     copyright: 'جميع الحقوق محفوظة.'
   }
 };
@@ -80,7 +80,6 @@ function Navbar({ lang, setLang }: { lang: 'en' | 'ar', setLang: (l: 'en' | 'ar'
     <nav className="flex items-center justify-between px-6" style={{ height: '60px' }}>
       <div className="flex flex-row items-center gap-2">
         <img src="/Logo.png" alt="EL-NOUR" className="navbar-logo" />
-        {/* <span className="text-yellow-400 font-bold text-xl">{translations[lang].company}</span> */}
       </div>
       <div className={`flex flex-row items-center ${lang === 'ar' ? 'gap-6' : 'gap-4'}`}> 
         <Link to="/" className="hover:text-yellow-400 transition">{translations[lang].home}</Link>
@@ -113,7 +112,6 @@ function Footer({ lang }: { lang: 'en' | 'ar' }) {
         <div className="flex flex-col md:flex-row md:items-center gap-4 text-yellow-300 text-lg" dir="ltr">
           <a href="tel:+201027625357" className="hover:underline">+20 102 762 5357</a>
           <a href="tel:+201223313905" className="hover:underline">+20 122 331 3905</a>
-          <a href="tel:+201095488613" className="hover:underline">+20 109 548 8613</a>
         </div>
       </div>
     </footer>
@@ -126,7 +124,7 @@ function Home({ lang }: { lang: 'en' | 'ar' }) {
       <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-yellow-300 drop-shadow-lg">{translations[lang].heroTitle}</h1>
       <p className="text-lg md:text-2xl max-w-2xl text-center mb-8 text-gray-200">{translations[lang].heroDesc}</p>
       <div className={`flex ${lang === 'ar' ? 'gap-6' : 'gap-4'}`}>
-        <Link to="/contact" className="bg-yellow-400 text-gray-900 font-semibold px-6 py-2 rounded shadow hover:bg-yellow-300 transition">{translations[lang].getQuote}</Link>
+        <Link to="/" className="bg-yellow-400 text-gray-900 font-semibold px-6 py-2 rounded shadow hover:bg-yellow-300 transition">{translations[lang].getQuote}</Link>
         <Link to="/services" className="bg-transparent border border-yellow-400 text-yellow-400 font-semibold px-6 py-2 rounded hover:bg-yellow-400 hover:text-gray-900 transition">{translations[lang].viewServices}</Link>
       </div>
     </main>
@@ -144,57 +142,192 @@ function About({ lang }: { lang: 'en' | 'ar' }) {
 }
 
 function Services({ lang }: { lang: 'en' | 'ar' }) {
+  const services = [
+    {
+      ar: 'الطلاء المعدني',
+      en: 'Metallic Coating',
+      desc: lang === 'ar'
+        ? 'تشطيبات معدنية متقدمة للتطبيقات الصناعية والزخرفية.'
+        : 'Advanced metallic finishes for industrial and decorative applications.',
+    },
+    {
+      ar: 'البرايمر و اللاكيهات',
+      en: 'Primers & Lacquer',
+      desc: lang === 'ar'
+        ? 'برايمر عالي الأداء لضمان الالتصاق والحماية.\nتشطيبات لاكيهات لامعة ومتينة لمظهر فاخر.'
+        : 'High-performance primers for superior adhesion and protection.\nGlossy, durable lacquer finishes for a premium look and feel.',
+    },
+    {
+      ar: 'الثنر',
+      en: 'Thinners',
+      desc: lang === 'ar'
+        ? 'ثنر عالي الجودة لضبط قوام الدهانات، سرعة الجفاف، وسهولة التطبيق على مختلف الأسطح.'
+        : 'High-quality thinners for optimal paint consistency, fast drying, and easy application on various surfaces.',
+    },
+    {
+      ar: 'مذيبات الأحبار',
+      en: 'Ink Solvents',
+      desc: lang === 'ar'
+        ? 'مذيبات أحبار متخصصة لتنظيف وصيانة معدات الطباعة وأنظمة الأحبار بكفاءة.'
+        : 'Specialized ink solvents for efficient cleaning and maintenance of printing equipment and ink systems.',
+    },
+    {
+      ar: 'بويات البلدورات',
+      en: 'Curb Paints',
+      desc: lang === 'ar'
+        ? 'دهانات بلدورات متينة بألوان متعددة، مصممة لرؤية عالية وأداء طويل الأمد في البيئات الحضرية.'
+        : 'Durable curb paints in multiple colors, designed for high visibility and long-lasting performance in urban environments.',
+    },
+    {
+      ar: 'أحبار الطباعة',
+      en: 'Printing Inks',
+      desc: lang === 'ar'
+        ? 'أحبار طباعة فلكسو عالية الجودة للشكائر المنسوجة والبولي إيثيلين/بولي بروبيلين، بألوان متنوعة وأداء ممتاز.'
+        : 'High-quality flexographic printing inks for woven sacks and polyethylene/polypropylene, available in various colors and excellent performance.',
+    },
+  ];
+
   return (
     <section className="max-w-5xl mx-auto py-12 px-4">
       <h2 className="text-3xl font-bold mb-4 text-yellow-300">{translations[lang].servicesTitle}</h2>
       <div className="grid md:grid-cols-3 gap-8">
-        <div className="bg-gray-800 rounded-lg p-6 shadow hover:scale-105 transition">
-          <div className="mb-2 text-yellow-400">[Icon]</div>
-          <h3 className="font-semibold text-lg mb-1">{translations[lang].metallic}</h3>
-          <p className="text-gray-300">{translations[lang].metallicDesc}</p>
-        </div>
-        <div className="bg-gray-800 rounded-lg p-6 shadow hover:scale-105 transition">
-          <div className="mb-2 text-yellow-400">[Icon]</div>
-          <h3 className="font-semibold text-lg mb-1">{translations[lang].primers}</h3>
-          <p className="text-gray-300">{translations[lang].primersDesc}</p>
-        </div>
-        <div className="bg-gray-800 rounded-lg p-6 shadow hover:scale-105 transition">
-          <div className="mb-2 text-yellow-400">[Icon]</div>
-          <h3 className="font-semibold text-lg mb-1">{translations[lang].lacquer}</h3>
-          <p className="text-gray-300">{translations[lang].lacquerDesc}</p>
-        </div>
+        {services.map((service, idx) => (
+          <div key={idx} className="bg-gray-800 rounded-lg p-6 shadow hover:scale-105 transition">
+            <div className="mb-2 text-yellow-400"></div>
+            <h3 className="font-semibold text-lg mb-1">{service.ar} <span className="block text-sm text-yellow-300 font-normal">{service.en}</span></h3>
+            <p className="text-gray-300" style={{ whiteSpace: 'pre-line' }}>{service.desc}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
 function Products({ lang }: { lang: 'en' | 'ar' }) {
+  const products = [
+    {
+      ar: 'بادئ صناعي سريع الجفاف (كل الألوان)',
+      en: 'Fast-drying industrial primer (all colors)',
+    },
+    {
+      ar: 'بادئ صناعي رصاصي برايمر',
+      en: 'Grey industrial primer',
+    },
+    {
+      ar: 'بادئ صناعي أحمر برايمر',
+      en: 'Red industrial primer',
+    },
+    {
+      ar: 'بادئ صناعي حسب طلب العميل (برايمر ألوان)',
+      en: 'Custom-color primer (based on client request)',
+    },
+    {
+      ar: 'لاكيه كل الألوان',
+      en: 'Lacquer (all colors)',
+    },
+    {
+      ar: 'بويات سريعة الجفاف (كل الألوان)',
+      en: 'Fast-drying paints (all colors)',
+    },
+    {
+      ar: 'بويات تخطيط الطرق (أصفر - أبيض)',
+      en: 'Road marking paints (yellow - white)',
+    },
+    {
+      ar: 'بويات بلدورات (أبيض - أسود - أخضر)',
+      en: 'Curb paints (white - black - green)',
+    },
+    {
+      ar: 'بويات طلاء الأسفلت الأسود (كل الألوان حسب طلب العميل - مائي أو زيتي)',
+      en: 'Asphalt black paint (all colors on demand – water or oil-based)',
+    },
+    {
+      ar: 'أحبار طباعة الفلكسو للشكائر المنسوجة',
+      en: 'Flexographic printing inks for woven sacks',
+    },
+    {
+      ar: 'أحبار طباعة الفلكسو للبولي إيثيلين / بولي بروبيلين',
+      en: 'Flexographic printing inks for polyethylene / polypropylene',
+    },
+    {
+      ar: 'مذيبات أحبار',
+      en: 'Ink solvents',
+    },
+    {
+      ar: 'الثنر بكل أنواعه',
+      en: 'All types of thinner',
+    },
+    {
+      ar: 'مذيبات البويات',
+      en: 'Paint solvents',
+    },
+    {
+      ar: 'ثنر التطهير للمعادن والكاوتش',
+      en: 'Metal and rubber surface thinner',
+    },
+  ];
+
   return (
-    <section className="max-w-5xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold mb-4 text-yellow-300">{translations[lang].productsTitle}</h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-gray-800 rounded-lg p-6 shadow flex flex-col items-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-yellow-300 to-gray-400 rounded-full mb-4" />
-          <h3 className="font-semibold text-lg mb-1">{translations[lang].primerA}</h3>
-          <p className="text-gray-300 text-center">{translations[lang].primerADesc}</p>
-        </div>
-        <div className="bg-gray-800 rounded-lg p-6 shadow flex flex-col items-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-blue-900 to-gray-400 rounded-full mb-4" />
-          <h3 className="font-semibold text-lg mb-1">{translations[lang].lacquerB}</h3>
-          <p className="text-gray-300 text-center">{translations[lang].lacquerBDesc}</p>
-        </div>
+    <section className="max-w-6xl mx-auto py-12 px-4">
+      <h2 className="text-3xl font-bold mb-8 text-yellow-300">{translations[lang].productsTitle}</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product, idx) => (
+          <div key={idx} className="bg-gray-800 rounded-xl p-6 shadow flex flex-col items-center text-center hover:scale-105 transition">
+            <div className="font-bold text-lg text-yellow-200 mb-1">{product.ar}</div>
+            <div className="text-gray-200 text-base">{product.en}</div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
 function Gallery({ lang }: { lang: 'en' | 'ar' }) {
+  const galleryImages = [
+    {
+      src: 'images1.png',
+      ar: 'بويات بلدورات',
+      en: 'Curb Paints',
+    },
+    {
+      src: 'images.png',
+      ar: 'بويات تخطيط الطرق',
+      en: 'Road marking paints',
+    },
+    {
+      src: 'ink2.png',
+      ar: 'أحبار طباعة فلكسو',
+      en: 'Flexographic printing inks',
+    },
+    {
+      src: 'ink.png',
+      ar: 'أحبار عالية الجودة',
+      en: 'High-quality ink',
+    },
+    {
+      src: 'Solvent-Paints-scaled.png',
+      ar: 'مذيبات أحبار عالية الجودة ',
+      en: 'High-quality ink solvents',
+    },
+    {
+      src: 'primer (2).png',
+      ar: 'برايمر صناعي حسب الطلب',
+      en: 'Custom-color primer',
+    },
+  ];
+
   return (
     <section className="max-w-5xl mx-auto py-12 px-4">
       <h2 className="text-3xl font-bold mb-4 text-yellow-300">{translations[lang].galleryTitle}</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {[1,2,3,4,5,6,7,8].map((i) => (
-          <div key={i} className="bg-gray-700 aspect-square rounded-lg flex items-center justify-center text-gray-400">Image {i}</div>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        {galleryImages.map((img, idx) => (
+          <div key={idx} className="relative bg-gray-800 rounded-lg shadow p-2 flex items-center justify-center group overflow-hidden">
+            <img src={`/${img.src}`} alt={`Gallery ${idx + 1}`} className="rounded-md object-cover w-full h-48 transition-transform duration-300 group-hover:scale-105" style={{maxHeight: '200px'}} />
+            <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">
+              <div className="text-yellow-300 font-bold mb-1">{img[lang]}</div>
+              <div className="text-gray-200 text-sm">{lang === 'ar' ? img.en : img.ar}</div>
+            </div>
+          </div>
         ))}
       </div>
     </section>
@@ -210,7 +343,6 @@ function Contact({ lang }: { lang: 'en' | 'ar' }) {
         <div className="flex flex-col md:flex-row md:items-center gap-4 text-yellow-300 text-lg" dir="ltr">
           <a href="tel:+201027625357" className="hover:underline">+20 102 762 5357</a>
           <a href="tel:+201223313905" className="hover:underline">+20 122 331 3905</a>
-          <a href="tel:+201095488613" className="hover:underline">+20 109 548 8613</a>
         </div>
         <div className={`flex mt-4 ${lang === 'ar' ? 'flex-row-reverse gap-4' : 'space-x-6'} `}>
           <a href="#" className="hover:text-yellow-400 transition">{translations[lang].facebook}</a>
