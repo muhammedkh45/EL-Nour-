@@ -105,9 +105,9 @@ function Footer({ lang }: { lang: 'en' | 'ar' }) {
       <div className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto px-4 gap-2 md:gap-0">
         <div className="mb-2 md:mb-0">&copy; {new Date().getFullYear()} {translations[lang].company} .{translations[lang].copyright}</div>
         <div className={`mb-2 md:mb-0 flex ${lang === 'ar' ? 'flex-row-reverse gap-4' : 'space-x-4'}`.trim()}>
-          <a href="#" className="hover:text-yellow-400 transition">{translations[lang].facebook}</a>
-          <a href="#" className="hover:text-yellow-400 transition">{translations[lang].instagram}</a>
-          <a href="#" className="hover:text-yellow-400 transition">{translations[lang].linkedin}</a>
+          <a href="https://www.facebook.com/elnourpaints" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">{translations[lang].facebook}</a>
+          <a href="https://www.instagram.com/elnour.paints" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">{translations[lang].instagram}</a>
+          <a href="https://www.linkedin.com/company/elnourpaints" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">{translations[lang].linkedin}</a>
         </div>
         <div className="flex flex-col md:flex-row md:items-center gap-4 text-yellow-300 text-lg" dir="ltr">
           <a href="tel:+201027625357" className="hover:underline">+20 102 762 5357</a>
@@ -344,10 +344,11 @@ function Contact({ lang }: { lang: 'en' | 'ar' }) {
           <a href="tel:+201027625357" className="hover:underline">+20 102 762 5357</a>
           <a href="tel:+201223313905" className="hover:underline">+20 122 331 3905</a>
         </div>
+        <a href="mailto:eljendypaint@gmail.com" className="text-yellow-300 hover:underline text-lg">eljendypaint@gmail.com</a>
         <div className={`flex mt-4 ${lang === 'ar' ? 'flex-row-reverse gap-4' : 'space-x-6'} `}>
-          <a href="#" className="hover:text-yellow-400 transition">{translations[lang].facebook}</a>
-          <a href="#" className="hover:text-yellow-400 transition">{translations[lang].instagram}</a>
-          <a href="#" className="hover:text-yellow-400 transition">{translations[lang].linkedin}</a>
+          <a href="https://www.facebook.com/elnourpaints" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">{translations[lang].facebook}</a>
+          <a href="https://www.instagram.com/elnour.paints" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">{translations[lang].instagram}</a>
+          <a href="https://www.linkedin.com/company/elnourpaints" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition">{translations[lang].linkedin}</a>
         </div>
       </div>
     </section>
