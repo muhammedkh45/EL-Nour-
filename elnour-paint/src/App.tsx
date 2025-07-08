@@ -356,7 +356,7 @@ function Contact({ lang }: { lang: 'en' | 'ar' }) {
 }
 
 function App() {
-  const [lang, setLang] = useState<'en' | 'ar'>('en');
+  const [lang, setLang] = useState<'en' | 'ar'>('ar');
   return (
     <div className={`min-h-screen flex flex-col bg-gradient-to-br from-blue-900 via-gray-900 to-yellow-600 text-white font-sans ${lang === 'ar' ? 'text-right' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <Navbar lang={lang} setLang={setLang} />
