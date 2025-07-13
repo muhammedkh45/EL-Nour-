@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
@@ -130,94 +130,7 @@ function Footer({ lang }: { lang: 'en' | 'ar' }) {
   );
 }
 
-// SEO Helper Function
-function updateSEO({ title, description, keywords }: {
-  title: string;
-  description: string;
-  keywords: string;
-}) {
-  // Update title
-  document.title = title;
-  
-  // Update meta description
-  let metaDescription = document.querySelector('meta[name="description"]');
-  if (!metaDescription) {
-    metaDescription = document.createElement('meta');
-    metaDescription.setAttribute('name', 'description');
-    document.head.appendChild(metaDescription);
-  }
-  metaDescription.setAttribute('content', description);
-  
-  // Update meta keywords
-  let metaKeywords = document.querySelector('meta[name="keywords"]');
-  if (!metaKeywords) {
-    metaKeywords = document.createElement('meta');
-    metaKeywords.setAttribute('name', 'keywords');
-    document.head.appendChild(metaKeywords);
-  }
-  metaKeywords.setAttribute('content', keywords);
-  
-  // Update Open Graph tags
-  updateOpenGraph({ title, description });
-}
-
-function updateOpenGraph({ title, description }: { title: string; description: string }) {
-  const baseUrl = 'https://elnourpaints.com';
-  
-  // Update or create og:title
-  let ogTitle = document.querySelector('meta[property="og:title"]');
-  if (!ogTitle) {
-    ogTitle = document.createElement('meta');
-    ogTitle.setAttribute('property', 'og:title');
-    document.head.appendChild(ogTitle);
-  }
-  ogTitle.setAttribute('content', title);
-  
-  // Update or create og:description
-  let ogDescription = document.querySelector('meta[property="og:description"]');
-  if (!ogDescription) {
-    ogDescription = document.createElement('meta');
-    ogDescription.setAttribute('property', 'og:description');
-    document.head.appendChild(ogDescription);
-  }
-  ogDescription.setAttribute('content', description);
-  
-  // Update or create og:image
-  let ogImage = document.querySelector('meta[property="og:image"]');
-  if (!ogImage) {
-    ogImage = document.createElement('meta');
-    ogImage.setAttribute('property', 'og:image');
-    document.head.appendChild(ogImage);
-  }
-  ogImage.setAttribute('content', `${baseUrl}/Logo.png`);
-  
-  // Update or create og:url
-  let ogUrl = document.querySelector('meta[property="og:url"]');
-  if (!ogUrl) {
-    ogUrl = document.createElement('meta');
-    ogUrl.setAttribute('property', 'og:url');
-    document.head.appendChild(ogUrl);
-  }
-  ogUrl.setAttribute('content', window.location.href);
-}
-
 function Home({ lang }: { lang: 'en' | 'ar' }) {
-  const seoData = {
-    title: lang === 'ar' 
-      ? 'النور للدهانات - متخصصون في الدهانات المعدنية والبرايمر واللاكيهات'
-      : 'EL-Nour Paints - Specialists in Metallic Paints, Primers & Lacquers',
-    description: lang === 'ar'
-      ? 'شركة النور للدهانات متخصصة في تصنيع الدهانات المعدنية، البرايمر، اللاكيهات، الثنر، وأحبار الطباعة. جودة عالية وأسعار منافسة.'
-      : 'EL-Nour Paints specializes in manufacturing metallic paints, primers, lacquers, thinners, and printing inks. High quality and competitive prices.',
-    keywords: lang === 'ar'
-      ? 'دهانات معدنية، برايمر، لاكيهات، ثنر، أحبار طباعة، دهانات صناعية، النور للدهانات'
-      : 'metallic paints, primers, lacquers, thinners, printing inks, industrial paints, EL-Nour Paints'
-  };
-
-  useEffect(() => {
-    updateSEO(seoData);
-  }, [seoData]);
-
   return (
     <main className="relative p-8 flex flex-col items-center justify-center min-h-[60vh]">
       {/* Background video */}
@@ -245,22 +158,6 @@ function Home({ lang }: { lang: 'en' | 'ar' }) {
 }
 
 function About({ lang }: { lang: 'en' | 'ar' }) {
-  const seoData = {
-    title: lang === 'ar'
-      ? 'من نحن - النور للدهانات | تاريخنا وخبرتنا'
-      : 'About Us - EL-Nour Paints | Our History & Experience',
-    description: lang === 'ar'
-      ? 'تعرف على تاريخ شركة النور للدهانات وخبرتنا في مجال تصنيع الدهانات المتخصصة للمنشآت المعدنية ودهانات تخطيط الطرق.'
-      : 'Learn about EL-Nour Paints history and expertise in manufacturing specialized coatings for metal structures and road marking paints.',
-    keywords: lang === 'ar'
-      ? 'تاريخ النور للدهانات، خبرة دهانات، دهانات معدنية، دهانات طرق'
-      : 'EL-Nour Paints history, paint expertise, metallic coatings, road paints'
-  };
-
-  useEffect(() => {
-    updateSEO(seoData);
-  }, [seoData]);
-
   return (
     <section className="max-w-3xl mx-auto py-12 px-4">
       <h2 className="text-3xl font-bold mb-4 text-yellow-300">{translations[lang].aboutTitle}</h2>
@@ -271,22 +168,6 @@ function About({ lang }: { lang: 'en' | 'ar' }) {
 }
 
 function Services({ lang }: { lang: 'en' | 'ar' }) {
-  const seoData = {
-    title: lang === 'ar'
-      ? 'خدماتنا - النور للدهانات | دهانات معدنية وبرايمر'
-      : 'Our Services - EL-Nour Paints | Metallic Paints & Primers',
-    description: lang === 'ar'
-      ? 'خدمات النور للدهانات تشمل الطلاء المعدني، البرايمر، اللاكيهات، الثنر، مذيبات الأحبار، ودهانات البلدورات.'
-      : 'EL-Nour Paints services include metallic coating, primers, lacquers, thinners, ink solvents, and curb paints.',
-    keywords: lang === 'ar'
-      ? 'خدمات دهانات، طلاء معدني، برايمر، لاكيهات، ثنر، مذيبات'
-      : 'paint services, metallic coating, primers, lacquers, thinners, solvents'
-  };
-
-  useEffect(() => {
-    updateSEO(seoData);
-  }, [seoData]);
-
   const services = [
     {
       ar: 'الطلاء المعدني',
@@ -349,22 +230,6 @@ function Services({ lang }: { lang: 'en' | 'ar' }) {
 }
 
 function Products({ lang }: { lang: 'en' | 'ar' }) {
-  const seoData = {
-    title: lang === 'ar'
-      ? 'منتجاتنا - النور للدهانات | برايمر صناعي ولاكيهات'
-      : 'Our Products - EL-Nour Paints | Industrial Primers & Lacquers',
-    description: lang === 'ar'
-      ? 'منتجات النور للدهانات تشمل برايمر صناعي، لاكيهات، بويات سريعة الجفاف، أحبار طباعة، وثنر بجميع أنواعه.'
-      : 'EL-Nour Paints products include industrial primers, lacquers, fast-drying paints, printing inks, and all types of thinners.',
-    keywords: lang === 'ar'
-      ? 'منتجات دهانات، برايمر صناعي، لاكيهات، أحبار طباعة، ثنر'
-      : 'paint products, industrial primers, lacquers, printing inks, thinners'
-  };
-
-  useEffect(() => {
-    updateSEO(seoData);
-  }, [seoData]);
-
   const products: { ar: string; en: string; img?: string }[] = [
     {
       ar: 'بادئ صناعي سريع الجفاف (كل الألوان)',
@@ -447,22 +312,6 @@ function Products({ lang }: { lang: 'en' | 'ar' }) {
 }
 
 function Gallery({ lang }: { lang: 'en' | 'ar' }) {
-  const seoData = {
-    title: lang === 'ar'
-      ? 'معرض الأعمال - النور للدهانات | صور منتجاتنا'
-      : 'Gallery - EL-Nour Paints | Our Products Showcase',
-    description: lang === 'ar'
-      ? 'معرض صور منتجات النور للدهانات تشمل بويات بلدورات، دهانات تخطيط الطرق، أحبار طباعة، ومذيبات عالية الجودة.'
-      : 'Gallery showcasing EL-Nour Paints products including curb paints, road marking paints, printing inks, and high-quality solvents.',
-    keywords: lang === 'ar'
-      ? 'معرض دهانات، صور منتجات، بويات بلدورات، أحبار طباعة'
-      : 'paint gallery, product photos, curb paints, printing inks'
-  };
-
-  useEffect(() => {
-    updateSEO(seoData);
-  }, [seoData]);
-
   const galleryImages = [
     {
       src: 'images1.png',
@@ -522,22 +371,6 @@ function Gallery({ lang }: { lang: 'en' | 'ar' }) {
 }
 
 function Contact({ lang }: { lang: 'en' | 'ar' }) {
-  const seoData = {
-    title: lang === 'ar'
-      ? 'اتصل بنا - النور للدهانات | تواصل معنا'
-      : 'Contact Us - EL-Nour Paints | Get In Touch',
-    description: lang === 'ar'
-      ? 'تواصل مع النور للدهانات للحصول على عروض الأسعار والاستفسارات. أرقام الهاتف: +20 102 762 5357، +20 122 331 3905.'
-      : 'Contact EL-Nour Paints for quotes and inquiries. Phone: +20 102 762 5357, +20 122 331 3905.',
-    keywords: lang === 'ar'
-      ? 'اتصال النور للدهانات، عروض أسعار، أرقام هواتف، واتساب'
-      : 'contact EL-Nour Paints, quotes, phone numbers, WhatsApp'
-  };
-
-  useEffect(() => {
-    updateSEO(seoData);
-  }, [seoData]);
-
   return (
     <section className="max-w-3xl mx-auto py-12 px-4">
       <h2 className="text-3xl font-bold mb-4 text-yellow-300">{translations[lang].contactTitle}</h2>
@@ -582,7 +415,6 @@ function Contact({ lang }: { lang: 'en' | 'ar' }) {
 
 function App() {
   const [lang, setLang] = useState<'en' | 'ar'>('ar');
-  
   return (
     <div className={`min-h-screen flex flex-col bg-gradient-to-br from-blue-900 via-gray-900 to-yellow-600 text-white font-sans ${lang === 'ar' ? 'text-right' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <Navbar lang={lang} setLang={setLang} />
