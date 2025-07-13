@@ -319,7 +319,7 @@ function Gallery({ lang }: { lang: 'en' | 'ar' }) {
       en: 'Curb Paints',
     },
     {
-      src: 'images.png',
+      src: 'دهانات تخطيط الطرق.png',
       ar: 'بويات تخطيط الطرق',
       en: 'Road marking paints',
     },
