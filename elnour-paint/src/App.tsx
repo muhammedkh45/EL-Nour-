@@ -477,7 +477,7 @@ function Gallery({ lang }: { lang: 'en' | 'ar' }) {
       en: 'Road marking paints',
     },
     {
-      src: 'freepik__the-style-is-candid-image-photography-with-natural__77908.png',
+      src: 'El-Nour Industrial Ink Can.png',
       ar: 'أحبار طباعة فلكسو',
       en: 'Flexographic printing inks',
     },
