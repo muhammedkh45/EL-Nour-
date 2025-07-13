@@ -314,7 +314,7 @@ function Products({ lang }: { lang: 'en' | 'ar' }) {
 function Gallery({ lang }: { lang: 'en' | 'ar' }) {
   const galleryImages = [
     {
-      src: 'images1.png',
+      src: 'Paiting curbs with precision workmanship.png',
       ar: 'بويات بلدورات',
       en: 'Curb Paints',
     },
