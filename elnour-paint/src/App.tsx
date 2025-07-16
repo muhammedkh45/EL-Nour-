@@ -431,6 +431,8 @@ function App() {
         </Routes>
       </div>
       <Footer lang={lang} />
+      <Analytics/>
+      <SpeedInsights/>
     </div>
   );
 }
