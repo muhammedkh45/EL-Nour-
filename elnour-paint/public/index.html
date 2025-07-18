@@ -10,22 +10,10 @@
       content="EL-Nour Paints specializes in high-quality metallic paints, primers, lacquers, and industrial coatings. Quality, innovation, and customer satisfaction are our priorities."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/Logo.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>EL-Nour Paints</title>
-    <!-- Google tag (gtag.js) -->
+
+    <!-- Google Analytics & Ads Tags -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-58CX7RNH1P"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -33,37 +21,101 @@
       gtag('js', new Date());
       gtag('config', 'G-58CX7RNH1P');
     </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17325102782"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17325102782"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17325102782');
+    </script>
+    <script>
+      gtag('event', 'conversion', {
+        send_to: 'AW-17325102782/ayyuCLratuwaEL6toMVA',
+        value: 1.0,
+        currency: 'EGP'
+      });
+    </script>
 
-  gtag('config', 'AW-17325102782');
-</script>
-<!-- Event snippet for Submit lead form conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17325102782/ayyuCLratuwaEL6toMVA',
-      'value': 1.0,
-      'currency': 'EGP'
-  });
-</script>
+    <!-- n8n Chat CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
 
+    <!-- تخصيص الألوان ودعم RTL -->
+    <style>
+      :root {
+        --chat--color-primary: #1e3a8a;
+        --chat--color-primary-shade-50: #1e40af;
+        --chat--color-primary-shade-100: #1e429f;
+        --chat--color-secondary: #0f172a;
+        --chat--color-white: #ffffff;
+        --chat--color-dark: #000000;
+        --chat--message--bot--background: var(--chat--color-primary);
+        --chat--message--bot--color: var(--chat--color-white);
+        --chat--message--user--background: var(--chat--color-secondary);
+        --chat--message--user--color: var(--chat--color-white);
+        --chat--toggle--background: var(--chat--color-primary);
+        --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+        --chat--toggle--active--background: var(--chat--color-primary-shade-100);
+        --chat--toggle--color: var(--chat--color-white);
+        --chat--header--background: var(--chat--color-dark);
+        --chat--header--color: var(--chat--color-white);
+      }
+      /* دعم RTL لكل عناصر الشات */
+      #n8n-chat,
+      .n8n-chat-container,
+      .n8n-chat-bubble,
+      .n8n-chat-user-bubble,
+      .n8n-chat-footer input {
+        direction: rtl !important;
+        text-align: right !important;
+        font-family: 'Tajawal', sans-serif;
+      }
+      /* زر الإطلاق عائم */
+      .n8n-chat-launch-button {
+        background-color: var(--chat--color-white) !important;
+        color: #333 !important;
+        border: 2px solid #ccc !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+      }
+      .n8n-chat-launch-button-wrapper {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 9999 !important;
+      }
+    </style>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- عنصر الشات -->
+    <div id="n8n-chat"></div>
+
+    <!-- React root -->
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- n8n Chat Initialization -->
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      createChat({
+        selector: '#n8n-chat',
+        webhookUrl: 'https://muhammedkh75.app.n8n.cloud/webhook/02d4fa45-a147-41c6-97de-f31feefd6f13/chat',
+        defaultLanguage: 'ar',
+        initialMessages: [
+          'مرحبًا 👋',
+          'أنا عزيز، كيف يمكنني مساعدتك اليوم؟'
+        ],
+        i18n: {
+          ar: {
+            title:'شركة النور للدهانات و احبار الطباعه',
+            subtitle: 'ابدأ المحادثة، متواجدون لخدمتك 24/7.',
+            inputPlaceholder: 'اكتب سؤالك هنا...',
+            getStarted: 'محادثة جديدة',
+            footer: ''
+          }
+        }
+      });
+    </script>
   </body>
 </html>
